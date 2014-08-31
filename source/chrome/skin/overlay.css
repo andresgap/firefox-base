@@ -1,0 +1,12 @@
+#extname-toolbarbutton {
+  list-style-image: url(chrome://extname/skin/images/icon32.png);
+}
+
+toolbar[iconsize="small"] #extname-toolbarbutton {
+  list-style-image: url(chrome://extname/skin/images/icon16.png);
+}
+
+#extname-panel {
+  width: 350px;
+  height: 300px;
+}

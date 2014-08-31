@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css"
+  href="chrome://extname/skin/overlay.css" ?>
+
+<!DOCTYPE overlay SYSTEM "chrome://extname/locale/locale.dtd">
+
+<overlay id="extname-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript"
+    src="chrome://extname/content/common.js" />
+  <script type="application/x-javascript"
+    src="chrome://extname/content/overlay.js" />
+
+  <commandset id="mainCommandSet">
+    <command id="extname-toolbarbutton-command"
+      oncommand="NamespaceChrome.Overlay.togglePanel();" />
+    <command id="extname-sidebar-command"
+      oncommand="NamespaceChrome.Overlay.toggleSidebar();" />
+  </commandset>
+
+  <keyset id="mainKeyset">
+    <key id="extname-toolbarbutton-key" key="P"
+      modifiers="shift control"
+      command="extname-toolbarbutton-command" />
+    <key id="extname-sidebar-key" key="S"
+      modifiers="shift control"
+      command="extname-sidebar-command" />
+  </keyset>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="extname-toolbarbutton"
+      label="Button"
+      class="toolbarbutton-1"
+      command="extname-toolbarbutton-command" />
+  </toolbarpalette>
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="extname-toolbarbutton-menuitem"
+      label="Open Panel"
+      insertbefore="sanitizeSeparator"
+      key="extname-toolbarbutton-key"
+      command="extname-toolbarbutton-command" />
+  </menupopup>
+
+  <menupopup id="viewSidebarMenu">
+    <menuitem id="extname-sidebar-menuitem"
+      key="extname-sidebar-key"
+      observes="extname-sidebar-broadcaster"/>
+  </menupopup>
+
+  <popupset id="mainPopupSet">
+    <panel id="extname-panel">
+      <label id="extname-panel-label" value="Hola Mundo" />
+    </panel>
+  </popupset>
+
+  <!-- Sidebar -->
+  <broadcasterset id="mainBroadcasterSet">
+    <broadcaster id="extname-sidebar-broadcaster"
+      label="Sidebar"
+      sidebartitle="Sidebar Title"
+      sidebarurl="chrome://extname/content/sidebar.xul"
+      autoCheck="false"
+      type="checkbox"
+      group="sidebar"
+      command="extname-sidebar-command" />
+  </broadcasterset>
+</overlay>
