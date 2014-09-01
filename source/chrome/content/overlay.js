@@ -19,7 +19,7 @@ NamespaceChrome.Overlay = {
 
   openPanel: function() {
     let panel = document.getElementById("extname-panel");
-    let anchor = document.getElementById("extname-toolbar-button");
+    let anchor = document.getElementById("extname-toolbarbutton");
     let position = "after_start";
     if (!anchor) {
       anchor = document.getElementById("browser-bottombox");
