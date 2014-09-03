@@ -26,6 +26,7 @@ NamespaceChrome.Overlay = {
       position = "before_end";
     }
     panel.openPopup(anchor, position, 0, 0, false, false);
+    alert(gBrowser.contentDocument)
   },
 
   closePanel: function() {
