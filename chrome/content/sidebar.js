@@ -7,7 +7,7 @@ Cu.import("resource://extname/resourceService.js");
 
 NamespaceChrome.Sidebar = {
   init: function() {
-    document.getElementById("extname-sidebar-label").value = NamespaceResources.ResourceService.test();
+    document.getElementById("extname-sidebar-jsm").value = NamespaceResources.ResourceService.test();
   }
 };
 

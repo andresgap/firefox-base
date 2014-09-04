@@ -53,6 +53,7 @@
   <popupset id="mainPopupSet">
     <panel id="extname-panel">
       <label id="extname-panel-label" value="Hola Mundo" />
+      <label id="extname-panel-jsm" value="" />
     </panel>
   </popupset>
 
